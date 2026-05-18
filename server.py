@@ -73,8 +73,9 @@ class MyHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 
-server = HTTPServer(('localhost', PORT), MyHandler)
+if __name__ == "__main__":
+    server = HTTPServer(('0.0.0.0', PORT), MyHandler)
 
-server = HTTPServer(('0.0.0.0', PORT), MyHandler)
+    print(f"Server running at http://0.0.0.0:{PORT}")
 
-server.serve_forever()
+    server.serve_forever()
