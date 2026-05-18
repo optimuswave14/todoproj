@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "deeptiii/todoproj"
+    }
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/optimuswave14/todoproj.git'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarcloud') {
+                    bat 'sonar-scanner'
+                }
+            }
+        }
+
+        stage('Trivy Scan') {
+            steps {
+                bat 'trivy fs . > trivy-report.txt'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t %IMAGE_NAME% .'
+            }
+        }
+    }
+}
