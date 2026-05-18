@@ -1,0 +1,7 @@
+organization=optimuswave14
+projectKey=optimuswave14_todoproj
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.87580
+dashboardUrl=https://sonarcloud.io/dashboard?id=optimuswave14_todoproj
+ceTaskId=AZ47HNLwFeK8p9meV6ru
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZ47HNLwFeK8p9meV6ru

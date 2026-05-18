@@ -75,6 +75,6 @@ class MyHandler(BaseHTTPRequestHandler):
 
 server = HTTPServer(('localhost', PORT), MyHandler)
 
-print(f"Server running at http://localhost:{PORT}")
+server = HTTPServer(('0.0.0.0', PORT), MyHandler)
 
 server.serve_forever()
