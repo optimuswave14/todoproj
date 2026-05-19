@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
+from pathlib import Path
 
 PORT = 8000
 
@@ -44,7 +45,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
                 self.wfile.write(file.read())
 
-        except:
+        except Exception:
 
             self.send_response(404)
             self.end_headers()
