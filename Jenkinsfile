@@ -9,7 +9,8 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/optimuswave14/todoproj.git'
+                git branch: 'main',
+                url: 'https://github.com/optimuswave14/todoproj.git'
             }
         }
 
